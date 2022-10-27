@@ -1,3 +1,5 @@
+using QuanLyBanVeMayBay.DTO;
+
 namespace QuanLyBanVeMayBay
 {
     internal static class Program
@@ -12,6 +14,7 @@ namespace QuanLyBanVeMayBay
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new fLogin());
+            
         }
     }
 }
