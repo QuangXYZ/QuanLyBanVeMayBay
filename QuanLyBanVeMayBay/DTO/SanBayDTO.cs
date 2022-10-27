@@ -8,12 +8,12 @@ namespace QuanLyBanVeMayBay.DTO
 {
     internal class SanBayDTO
     {
-        private String maSanBay;
-        private String tenSanBay;
-        private String quocGia;
+        private string maSanBay;
+        private string tenSanBay;
+        private string quocGia;
 
-        public String MaSanBay { get => maSanBay; set => maSanBay = value; }
-        public String TenSanBay { get => tenSanBay; set => tenSanBay = value; }
-        public String QuocGia { get => quocGia; set => quocGia = value; }
+        public string MaSanBay { get => maSanBay; set => maSanBay = value; }
+        public string TenSanBay { get => tenSanBay; set => tenSanBay = value; }
+        public string QuocGia { get => quocGia; set => quocGia = value; }
     }
 }
