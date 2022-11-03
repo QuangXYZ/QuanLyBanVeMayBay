@@ -81,5 +81,10 @@ namespace QuanLyBanVeMayBay
         {
 
         }
+
+        private void textBox24_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
