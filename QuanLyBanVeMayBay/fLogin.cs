@@ -7,6 +7,7 @@ namespace QuanLyBanVeMayBay
         public fLogin()
         {
             InitializeComponent();
+            RememberMe();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,19 +30,59 @@ namespace QuanLyBanVeMayBay
                         this.Hide();
                         f.ShowDialog();
                         this.Show();
-                     }
+                        if (checkBox1.Checked)
+                        {
+                            string[] str = { "true", textBox1.Text, textBox2.Text };
+                            File.WriteAllLines("D:\\C_Sharp\\QuanLyBanVeMayBay\\QuanLyBanVeMayBay\\Remember.txt", str);
+                        }
+                }
                     else
                 {
-                    MessageBox.Show("Sai thông tin đăng nhập");
+                    MessageBox.Show("Sai thông tin đăng nhập", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
 
                 }
                 sqlConn.Close();
                  }
                  else
                 {
-                MessageBox.Show("Nhập thông tin không đầy đủ");
+                     MessageBox.Show("Nhập thông tin không đầy đủ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                
                 }
                
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!checkBox1.Checked)
+            {
+                File.WriteAllText("D:\\C_Sharp\\QuanLyBanVeMayBay\\QuanLyBanVeMayBay\\Remember.txt", "false");
+            }
+        }
+        private void RememberMe()
+        {
+            string[] str = File.ReadAllLines("D:\\C_Sharp\\QuanLyBanVeMayBay\\QuanLyBanVeMayBay\\Remember.txt");
+            if (str[0].Equals("true"))
+            {
+                checkBox1.Checked = true;
+                textBox1.Text = str[1];
+                textBox2.Text = str[2];
+            }
+        }
+
+        private void fLogin_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+          
+        }
+
+        private void fLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender,e);
+            }
         }
     }
 }
