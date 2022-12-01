@@ -387,5 +387,15 @@ namespace QuanLyBanVeMayBay
             }
             sqlConn.Close();
         }
+
+        private void label50_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox19_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
