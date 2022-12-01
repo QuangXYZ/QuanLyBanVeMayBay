@@ -117,13 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Password" xml:space="preserve">
-    <value>123456</value>
-  </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>true</value>
-  </data>
-  <data name="Username" xml:space="preserve">
-    <value>Admin</value>
-  </data>
 </root>
