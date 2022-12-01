@@ -8,6 +8,10 @@ namespace QuanLyBanVeMayBay
 {
     class ConnectionString
     {
+<<<<<<< Updated upstream
         public static string connectionString = @"Data Source=ASHITA\SQLEXPRESS;Initial Catalog=QuanLyBanVeMayBay;Integrated Security=True";
+=======
+        public static string connectionString = "Data Source=ASHITA\\SQLEXPRESS;Initial Catalog=QuanLyBanVeMayBay;Integrated Security=True";
+>>>>>>> Stashed changes
     }
 }
