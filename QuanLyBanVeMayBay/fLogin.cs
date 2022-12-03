@@ -33,7 +33,7 @@ namespace QuanLyBanVeMayBay
                         if (checkBox1.Checked)
                         {
                             string[] str = { "true", textBox1.Text, textBox2.Text };
-                            File.WriteAllLines("D:\\C_Sharp\\QuanLyBanVeMayBay\\QuanLyBanVeMayBay\\Remember.txt", str);
+                            File.WriteAllLines("D:\\QLBVMB9\\QuanLyBanVeMayBay\\Remember.txt", str);
                         }
                 }
                     else
@@ -57,12 +57,12 @@ namespace QuanLyBanVeMayBay
         {
             if (!checkBox1.Checked)
             {
-                File.WriteAllText("D:\\C_Sharp\\QuanLyBanVeMayBay\\QuanLyBanVeMayBay\\Remember.txt", "false");
+                File.WriteAllText("D:\\QLBVMB9\\QuanLyBanVeMayBay\\Remember.txt", "false");
             }
         }
         private void RememberMe()
         {
-            string[] str = File.ReadAllLines("D:\\C_Sharp\\QuanLyBanVeMayBay\\QuanLyBanVeMayBay\\Remember.txt");
+            string[] str = File.ReadAllLines("D:\\QLBVMB9\\QuanLyBanVeMayBay\\Remember.txt");
             if (str[0].Equals("true"))
             {
                 checkBox1.Checked = true;
