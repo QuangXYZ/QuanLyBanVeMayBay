@@ -71,6 +71,20 @@ namespace QuanLyBanVeMayBay
             dataGridView6.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView6.MultiSelect = false;
 
+            dataGridView10.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView10.DataSource = GetAllMayBayNv().Tables[0];
+            dataGridView10.AllowUserToAddRows = false;
+            dataGridView10.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView10.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView10.MultiSelect = false;
+
+            dataGridView5.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView5.DataSource = GetAllNhanVien().Tables[0];
+            dataGridView5.AllowUserToAddRows = false;
+            dataGridView5.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView5.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView5.MultiSelect = false;
+
 
             initAll();
             
@@ -119,6 +133,35 @@ namespace QuanLyBanVeMayBay
             sqlConn  = new SqlConnection(ConnectionString.connectionString);
             sqlConn.Open();
             string sql = "Select * from SANBAY";
+            da = new SqlDataAdapter(sql, sqlConn);
+            da.Fill(ds);
+            sqlConn.Close();
+            return ds;
+
+        }
+        DataSet GetAllNhanVien()
+        {
+            SqlConnection sqlConn;
+            SqlDataAdapter da;
+            DataSet ds = new DataSet();
+            sqlConn = new SqlConnection(ConnectionString.connectionString);
+            sqlConn.Open();
+            string sql = "Select * from NhanVien";
+            da = new SqlDataAdapter(sql, sqlConn);
+            da.Fill(ds);
+            sqlConn.Close();
+            return ds;
+
+        }
+
+        DataSet GetAllMayBayNv()
+        {
+            SqlConnection sqlConn;
+            SqlDataAdapter da;
+            DataSet ds = new DataSet();
+            sqlConn = new SqlConnection(ConnectionString.connectionString);
+            sqlConn.Open();
+            string sql = "Select MAMAYBAY from MAYBAY";
             da = new SqlDataAdapter(sql, sqlConn);
             da.Fill(ds);
             sqlConn.Close();
@@ -707,7 +750,7 @@ namespace QuanLyBanVeMayBay
             SqlCommand cmd = new SqlCommand(sql, sqlConn);
             int result = cmd.ExecuteNonQuery();
             sqlConn.Close();
-            if (i > 0)
+            if (result > 0)
             {
                 MessageBox.Show("Xóa thành công", "SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView4.DataSource = GetAllVe().Tables[0];
@@ -752,7 +795,22 @@ namespace QuanLyBanVeMayBay
             sqlConn.Close();
             dataGridView4.DataSource = ds.Tables[0];
         }
-
+        private string GetNameSanBay(string MASB)
+        {
+            string name = "";
+            SqlConnection sqlConn;
+            sqlConn = new SqlConnection(ConnectionString.connectionString);
+            sqlConn.Open();
+            string sql = "Select * from SANBAY where MASANBAY = '"+MASB+"'";
+            SqlCommand cmd = new SqlCommand(sql, sqlConn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                name = (dr["TENSANBAY"].ToString());
+            }
+            sqlConn.Close();
+            return name;
+        }
         private void button9_Click(object sender, EventArgs e)
         {
 
@@ -764,8 +822,23 @@ namespace QuanLyBanVeMayBay
             string sql = "Select * from VE where MACHUYENBAY = '" + textBox1.Text + "'";
             da = new SqlDataAdapter(sql, sqlConn);
             da.Fill(ds);
+           
             sqlConn.Close();
             dataGridView4.DataSource = ds.Tables[0];
+
+            SqlConnection sqlConn1;
+            sqlConn1 = new SqlConnection(ConnectionString.connectionString);
+            sqlConn1.Open();
+            string sql1 = "Select * from CHUYENBAY where MACHUYENBAY ='"+ textBox1.Text + "'";
+            SqlCommand cmd = new SqlCommand(sql1, sqlConn1);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                label31.Text = GetNameSanBay (dr["SANBAYDI"].ToString());
+                label33.Text = GetNameSanBay(dr["SANBAYDEN"].ToString());
+              
+            }
+            sqlConn1.Close();
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -859,7 +932,7 @@ namespace QuanLyBanVeMayBay
             SqlCommand cmd = new SqlCommand(sql, sqlConn);
             int result = cmd.ExecuteNonQuery();
             sqlConn.Close();
-            if (i > 0)
+            if (result > 0)
             {
                 MessageBox.Show("Xóa thành công", "SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView8.DataSource = GetAllSanBay().Tables[0];
@@ -931,7 +1004,38 @@ namespace QuanLyBanVeMayBay
 
         private void button22_Click(object sender, EventArgs e)
         {
+            if (dataGridView6.SelectedRows.Count == 0) return;
+            int i = dataGridView6.SelectedRows[0].Index;
+            SqlConnection sqlConn1;
+            sqlConn1 = new SqlConnection(ConnectionString.connectionString);
+            sqlConn1.Open();
+            string sql1 = "Select count(*) from CHUYENBAY where MAMAYBAY ='" + Convert.ToString(dataGridView6[0, i].Value) + "'";
+            SqlCommand cmd1 = new SqlCommand(sql1, sqlConn1);
 
+            Int32 result1 = (Int32)cmd1.ExecuteScalar();
+            sqlConn1.Close();
+
+            if (result1>0)
+            {
+                MessageBox.Show("Không thể xóa máy bay\nMáy bay này đang được sử dụng", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+            SqlConnection sqlConn;
+            sqlConn = new SqlConnection(ConnectionString.connectionString);
+            sqlConn.Open();
+            string sql = "delete from MAYBAY where MAMAYBAY ='" + Convert.ToString(dataGridView6[0, i].Value) + "'";
+            SqlCommand cmd = new SqlCommand(sql, sqlConn);
+            int result = cmd.ExecuteNonQuery();
+            sqlConn.Close();
+            if (result > 0)
+            {
+                MessageBox.Show("Xóa thành công", "SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridView6.DataSource = GetAllMayBay().Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Xóa không thành công", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button23_Click(object sender, EventArgs e)
@@ -940,8 +1044,33 @@ namespace QuanLyBanVeMayBay
         }
 
         private void button24_Click(object sender, EventArgs e)
-        {
-
+        {           
+            try
+            {
+                SqlConnection sqlConn;
+                sqlConn = new SqlConnection(ConnectionString.connectionString);
+                sqlConn.Open();
+                string sql = "update MAYBAY set TENMAYBAY=@TENMAYBAY,SOGHE=@SOGHE,LOAI=@LOAI,THUONGGIA=@THUONGGIA,PHOTHONG=@PHOTHONG where MAMAYBAY=@MAMAYBAY ";
+                SqlCommand cmd = new SqlCommand(sql, sqlConn);
+                cmd.Parameters.AddWithValue("@MAMAYBAY", textBox16.Text);
+                cmd.Parameters.AddWithValue("@TENMAYBAY", textBox31.Text);
+                cmd.Parameters.AddWithValue("@SOGHE", textBox27.Text);
+                cmd.Parameters.AddWithValue("@LOAI", textBox19.Text);
+                cmd.Parameters.AddWithValue("@THUONGGIA", textBox20.Text);
+                cmd.Parameters.AddWithValue("@PHOTHONG", textBox24.Text);
+                int result = cmd.ExecuteNonQuery();
+                if (result >= 0)
+                {
+                    MessageBox.Show("Sửa thành công", "SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView6.DataSource = GetAllMayBay().Tables[0];
+                }
+                else { MessageBox.Show("Sửa không thành công", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                sqlConn.Close();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Sửa không thành công\n" + exp, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button25_Click(object sender, EventArgs e)
@@ -997,6 +1126,216 @@ namespace QuanLyBanVeMayBay
         private void tabPage4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button23_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void heThongToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Refresh()
+        {
+            initAll();
+            dataGridView4.DataSource = GetAllVe().Tables[0];
+            dataGridView1.DataSource = GetAllChuyenBay().Tables[0];
+            dataGridView7.DataSource = GetAllChuyenBayVe().Tables[0];
+            dataGridView8.DataSource = GetAllSanBay().Tables[0];
+            dataGridView6.DataSource = GetAllMayBay().Tables[0];
+            dataGridView5.DataSource = GetAllNhanVien().Tables[0];
+            dataGridView10.DataSource = GetAllMayBayNv().Tables[0];
+
+        }
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            textMSCB.Text = "";
+            textBox7.Text = "";
+
+            textMSCB.Text = "";
+            textBox18.Text = "";
+            textBox32.Text = "";
+            comboBox3.SelectedIndex = 0;
+            comboBox4.SelectedIndex = 0;
+            comboBox5.SelectedIndex = 0;
+            textBox21.Text = "";
+            textBox22.Text = "";
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection sqlConn;
+                sqlConn = new SqlConnection(ConnectionString.connectionString);
+                sqlConn.Open();
+                string sql = "update VE set TENKHACHHANG=@TENKHACHHANG,CMND=@CMND,QUOCTICH=@QUOCTICH,GIA=@GIA,HANGVE=@HANGVE where MAVE=@MAVE ";
+                SqlCommand cmd = new SqlCommand(sql, sqlConn);
+
+                cmd.Parameters.AddWithValue("@TENKHACHHANG", textBox3.Text);
+                cmd.Parameters.AddWithValue("@CMND", textBox4.Text);
+                cmd.Parameters.AddWithValue("@QUOCTICH", comboBox10.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@GIA", textBox33.Text);
+                cmd.Parameters.AddWithValue("@HANGVE", comboBox1.SelectedItem.ToString());
+                cmd.Parameters.AddWithValue("@MAVE", textBox2.Text);
+
+                int result = cmd.ExecuteNonQuery();
+                if (result >= 0)
+                {
+                    MessageBox.Show("Sửa thành công", "SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Refresh();
+                }
+                else { MessageBox.Show("Sửa không thành công", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                sqlConn.Close();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Sửa không thành công\n" + exp, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            };
+        }
+
+        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            row = dataGridView5.Rows[e.RowIndex];
+            textBox8.Text = Convert.ToString(row.Cells["MANHANVIEN"].Value);
+            textBox9.Text = Convert.ToString(row.Cells["TENNHANVIEN"].Value);
+            textBox10.Text = Convert.ToString(row.Cells["SDT"].Value);
+            textBox11.Text = Convert.ToString(row.Cells["MAMAYBAY"].Value);
+            textBox12.Text = Convert.ToString(row.Cells["CMND"].Value);
+            textBox14.Text = Convert.ToString(row.Cells["DIACHI"].Value);
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection sqlConn;
+                sqlConn = new SqlConnection(ConnectionString.connectionString);
+                sqlConn.Open();
+                string sql = "insert into NHANVIEN(MANHANVIEN,TENNHANVIEN,MAMAYBAY,CMND,SDT,DIACHI) values " +
+                    "(@MANHANVIEN,@TENNHANVIEN,@MAMAYBAY,@CMND,@SDT,@DIACHI)";
+                SqlCommand cmd = new SqlCommand(sql, sqlConn);
+                cmd.Parameters.Add("@MANHANVIEN", SqlDbType.Char).Value = textBox8.Text;
+                cmd.Parameters.Add("@TENNHANVIEN", SqlDbType.Char).Value = textBox9.Text;
+                cmd.Parameters.Add("@MAMAYBAY", SqlDbType.Char).Value = Convert.ToString(dataGridView10[0, dataGridView10.SelectedRows[0].Index].Value);
+                cmd.Parameters.Add("@CMND", SqlDbType.Char).Value = textBox12.Text;
+                cmd.Parameters.Add("@SDT", SqlDbType.Char).Value = textBox10.Text;
+                cmd.Parameters.Add("@DIACHI", SqlDbType.Char).Value = textBox14.Text;
+       
+                SqlConnection sqlConn1;
+                sqlConn1 = new SqlConnection(ConnectionString.connectionString);
+                sqlConn1.Open();
+
+
+                int result = cmd.ExecuteNonQuery();
+                if (result >= 0)
+                {
+                    MessageBox.Show("Thêm thành công", "SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView5.DataSource = GetAllNhanVien().Tables[0];
+                }
+                else { MessageBox.Show("Thêm không thành công", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                sqlConn.Close();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Thêm không thành công\n" + exp, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridView10_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            DataGridViewRow row = new DataGridViewRow();
+            row = dataGridView10.Rows[e.RowIndex];
+            SqlConnection sqlConn;
+            SqlDataAdapter da;
+            DataSet ds = new DataSet();
+            sqlConn = new SqlConnection(ConnectionString.connectionString);
+            sqlConn.Open();
+            string sql = "Select * from NHANVIEN where MAMAYBAY = '" + Convert.ToString(row.Cells["MAMAYBAY"].Value) + "'";
+            da = new SqlDataAdapter(sql, sqlConn);
+            da.Fill(ds);
+            sqlConn.Close();
+            dataGridView5.DataSource = ds.Tables[0];
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (dataGridView5.SelectedRows.Count == 0) return;
+            int i = dataGridView5.SelectedRows[0].Index;
+            SqlConnection sqlConn;
+            sqlConn = new SqlConnection(ConnectionString.connectionString);
+            sqlConn.Open();
+            string sql = "delete from NHANVIEN where MANHANVIEN ='" + Convert.ToString(dataGridView5[0, i].Value) + "'";
+            SqlCommand cmd = new SqlCommand(sql, sqlConn);
+            int result = cmd.ExecuteNonQuery();
+            sqlConn.Close();
+            if (result > 0)
+            {
+                MessageBox.Show("Xóa thành công", "SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridView5.DataSource = GetAllNhanVien().Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("Xóa không thành công", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+               
+                SqlConnection sqlConn;
+                sqlConn = new SqlConnection(ConnectionString.connectionString);
+                sqlConn.Open();
+                string sql = "update NHANVIEN set TENNHANVIEN=@TENNHANVIEN,MAMAYBAY=@MAMAYBAY,CMND=@CMND,DIACHI=@DIACHI,SDT=@SDT where  MANHANVIEN=@MANHANVIEN";
+                SqlCommand cmd = new SqlCommand(sql, sqlConn);
+                cmd.Parameters.AddWithValue("@TENNHANVIEN", textBox9.Text);
+                cmd.Parameters.AddWithValue("@MAMAYBAY", textBox11.Text);
+                cmd.Parameters.AddWithValue("@CMND", textBox10.Text);
+                cmd.Parameters.AddWithValue("@DIACHI", textBox14.Text);
+                cmd.Parameters.AddWithValue("@SDT", textBox10.Text);
+                cmd.Parameters.AddWithValue("@MANHANVIEN", textBox8.Text);
+                
+                int result = cmd.ExecuteNonQuery();
+                if (result >= 0)
+                {
+                    MessageBox.Show("Sửa thành công", "SUCCESSFUL", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView5.DataSource = GetAllNhanVien().Tables[0];
+                }
+                else { MessageBox.Show("Sửa không thành công", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                sqlConn.Close();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Sửa không thành công\n" + exp, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            textBox8.Text = "";
+            textBox9.Text = "";
+            textBox10.Text = "";
+            textBox11.Text = "";
+            textBox12.Text = "";
+            textBox14.Text = "";
         }
     }
 }

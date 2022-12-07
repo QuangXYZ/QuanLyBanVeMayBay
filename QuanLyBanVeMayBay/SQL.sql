@@ -41,6 +41,17 @@ create table VE
 	HANGVE char(5),
 )
 
+create table NHANVIEN
+(
+	MANHANVIEN char(5) not null primary key,
+	TENNHANVIEN varchar(40),
+	MAMAYBAY char(5),
+	CMND varchar(20),
+	SDT char(15),
+	DIACHI char(40),
+	
+)
+
 alter table CHUYENBAY add constraint FK_MAMAYBAY foreign key (MAMAYBAY) references MAYBAY(MAMAYBAY)
 alter table CHUYENBAY add constraint FK_SANBAYDI foreign key (SANBAYDI) references SANBAY(MASANBAY)
 alter table CHUYENBAY add constraint FK_SANBAYDEN foreign key (SANBAYDEN) references SANBAY(MASANBAY)
@@ -56,6 +67,17 @@ insert into SANBAY(MASANBAY,TENSANBAY,QUOCGIA) values
 
 insert into SANBAY(MASANBAY,TENSANBAY,QUOCGIA) values 
 ('SB003','SAN BAY DN','VIETNAM')
+
+
+MANHANVIEN char(5) not null primary key,
+	TENNHANVIEN varchar(40),
+	MAMAYBAY char(5),
+	CMND varchar(20),
+	SDT char(15),
+	DIACHI char(40)
+insert into NHANVIEN(MANHANVIEN,TENNHANVIEN,MAMAYBAY,CMND,SDT,DIACHI) values 
+('NV001','Nguyen Thanh Quang','MB001','123456789','0987654321','273 An Duong Vuong')
+
 
 
 
