@@ -29,6 +29,7 @@ namespace QuanLyBanVeMayBay
                         fHome f = new fHome(textBox2.Text);
                         this.Hide();
                         f.ShowDialog();
+                        this.Show();
                 
                         if (checkBox1.Checked)
                         {

@@ -167,7 +167,7 @@ namespace QuanLyBanVeMayBay
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            tabControl1.SelectTab(1);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -305,8 +305,9 @@ namespace QuanLyBanVeMayBay
         private void button1_Click(object sender, EventArgs e)
         {
             fUser f = new fUser();
-            this.Hide();
+          
             f.ShowDialog();
+            this.Show();
           
         }
 
@@ -327,17 +328,12 @@ namespace QuanLyBanVeMayBay
 
         private void button5_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(3);
+            tabControl1.SelectTab(2);
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {
-            DialogResult r = MessageBox.Show("Bạn có muốn thoát chương trình","Xác nhận",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
-            if (r == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-          
+        {            
+                this.Close();
         }
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -453,15 +449,7 @@ namespace QuanLyBanVeMayBay
         {
             button1.BackColor = Color.MediumSeaGreen;
         }
-        private void button2_MouseHover(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.Orange;
-        }
-
-        private void button2_MouseLeave(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.MediumSeaGreen;
-        }
+        
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
@@ -1353,6 +1341,11 @@ namespace QuanLyBanVeMayBay
             textBox33.Text = "";
             comboBox10.SelectedIndex = 0;
             comboBox1.SelectedIndex = 0;
+        }
+
+        private void thongKeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

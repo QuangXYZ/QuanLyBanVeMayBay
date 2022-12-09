@@ -31,9 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.heThongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thongTinTaiKhoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thongTinNguoiDungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thongKeTheoTuanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thongKeTheoThangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -236,7 +233,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.heThongToolStripMenuItem,
-            this.thongTinTaiKhoanToolStripMenuItem,
             this.thongKeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -261,35 +257,15 @@
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
-            // thongTinTaiKhoanToolStripMenuItem
-            // 
-            this.thongTinTaiKhoanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thongTinNguoiDungToolStripMenuItem,
-            this.dangXuatToolStripMenuItem});
-            this.thongTinTaiKhoanToolStripMenuItem.Name = "thongTinTaiKhoanToolStripMenuItem";
-            this.thongTinTaiKhoanToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.thongTinTaiKhoanToolStripMenuItem.Text = "thong tin tai khoan";
-            // 
-            // thongTinNguoiDungToolStripMenuItem
-            // 
-            this.thongTinNguoiDungToolStripMenuItem.Name = "thongTinNguoiDungToolStripMenuItem";
-            this.thongTinNguoiDungToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.thongTinNguoiDungToolStripMenuItem.Text = "Thong tin nguoi dung";
-            // 
-            // dangXuatToolStripMenuItem
-            // 
-            this.dangXuatToolStripMenuItem.Name = "dangXuatToolStripMenuItem";
-            this.dangXuatToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.dangXuatToolStripMenuItem.Text = "dang xuat";
-            // 
             // thongKeToolStripMenuItem
             // 
             this.thongKeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thongKeTheoTuanToolStripMenuItem,
             this.thongKeTheoThangToolStripMenuItem});
             this.thongKeToolStripMenuItem.Name = "thongKeToolStripMenuItem";
-            this.thongKeToolStripMenuItem.Size = new System.Drawing.Size(66, 22);
-            this.thongKeToolStripMenuItem.Text = "thong ke";
+            this.thongKeToolStripMenuItem.Size = new System.Drawing.Size(68, 22);
+            this.thongKeToolStripMenuItem.Text = "Thống kê";
+            this.thongKeToolStripMenuItem.Click += new System.EventHandler(this.thongKeToolStripMenuItem_Click);
             // 
             // thongKeTheoTuanToolStripMenuItem
             // 
@@ -1275,7 +1251,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(240, 217);
+            this.textBox4.Location = new System.Drawing.Point(239, 222);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(199, 29);
             this.textBox4.TabIndex = 1;
@@ -1283,7 +1259,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(240, 171);
+            this.textBox3.Location = new System.Drawing.Point(239, 176);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(199, 29);
             this.textBox3.TabIndex = 1;
@@ -1291,7 +1267,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(240, 121);
+            this.textBox2.Location = new System.Drawing.Point(239, 126);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(199, 29);
             this.textBox2.TabIndex = 1;
@@ -2240,11 +2216,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(60, 23);
+            this.label3.Location = new System.Drawing.Point(37, 32);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.Size = new System.Drawing.Size(110, 28);
             this.label3.TabIndex = 0;
             this.label3.Text = "User name";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -2331,7 +2308,6 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private ToolStripMenuItem thongTinTaiKhoanToolStripMenuItem;
         private ToolStripMenuItem thongKeToolStripMenuItem;
         private Button button7;
         private TabControl tabControl1;
@@ -2339,8 +2315,6 @@
         private TabPage tabPage1;
         private TabPage tabPage4;
         private TabPage tabPage5;
-        private ToolStripMenuItem thongTinNguoiDungToolStripMenuItem;
-        private ToolStripMenuItem dangXuatToolStripMenuItem;
         private ToolStripMenuItem thongKeTheoTuanToolStripMenuItem;
         private ToolStripMenuItem thongKeTheoThangToolStripMenuItem;
         private Panel panel1;
