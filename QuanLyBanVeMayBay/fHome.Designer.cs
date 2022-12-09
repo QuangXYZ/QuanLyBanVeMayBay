@@ -124,6 +124,7 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -1129,6 +1130,7 @@
             this.tabPage2.Controls.Add(this.label35);
             this.tabPage2.Controls.Add(this.label34);
             this.tabPage2.Controls.Add(this.label30);
+            this.tabPage2.Controls.Add(this.panel5);
             this.tabPage2.ForeColor = System.Drawing.Color.Gold;
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
@@ -1147,8 +1149,9 @@
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(98, 38);
             this.button28.TabIndex = 7;
-            this.button28.Text = "RESET";
+            this.button28.Text = "Clear";
             this.button28.UseVisualStyleBackColor = false;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
             // button29
             // 
@@ -1412,6 +1415,14 @@
             this.label30.TabIndex = 0;
             this.label30.Text = "Chuyến bay";
             // 
+            // panel5
+            // 
+            this.panel5.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.panel5.Location = new System.Drawing.Point(29, 291);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(883, 270);
+            this.panel5.TabIndex = 8;
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.DarkCyan;
@@ -1434,6 +1445,7 @@
             this.groupBox7.Controls.Add(this.dataGridView9);
             this.groupBox7.Controls.Add(this.dataGridView8);
             this.groupBox7.Controls.Add(this.dataGridView3);
+            this.groupBox7.ForeColor = System.Drawing.Color.MidnightBlue;
             this.groupBox7.Location = new System.Drawing.Point(5, 242);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(910, 328);
@@ -1445,6 +1457,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.Color.Yellow;
             this.label19.Location = new System.Drawing.Point(315, 32);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(109, 21);
@@ -1456,6 +1469,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.Color.Yellow;
             this.label17.Location = new System.Drawing.Point(607, 32);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(122, 21);
@@ -1467,6 +1481,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.ForeColor = System.Drawing.Color.Yellow;
             this.label15.Location = new System.Drawing.Point(6, 32);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(139, 21);
@@ -1520,6 +1535,7 @@
             this.groupBox6.Controls.Add(this.button12);
             this.groupBox6.Controls.Add(this.textBox23);
             this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.ForeColor = System.Drawing.Color.Yellow;
             this.groupBox6.Location = new System.Drawing.Point(5, 5);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(910, 208);
@@ -1799,6 +1815,7 @@
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.dataGridView6);
+            this.groupBox10.ForeColor = System.Drawing.Color.MidnightBlue;
             this.groupBox10.Location = new System.Drawing.Point(3, 300);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(924, 273);
@@ -1832,6 +1849,7 @@
             this.groupBox9.Controls.Add(this.label53);
             this.groupBox9.Controls.Add(this.label52);
             this.groupBox9.Controls.Add(this.label50);
+            this.groupBox9.ForeColor = System.Drawing.Color.Yellow;
             this.groupBox9.Location = new System.Drawing.Point(3, 3);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(924, 184);
@@ -2223,7 +2241,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(50, 13);
+            this.label3.Location = new System.Drawing.Point(60, 23);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 15);
@@ -2472,5 +2490,6 @@
         private Button button23;
         private ToolStripMenuItem refreshToolStripMenuItem;
         private DataGridView dataGridView10;
+        private Panel panel5;
     }
 }

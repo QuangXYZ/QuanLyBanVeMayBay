@@ -61,6 +61,16 @@ namespace QuanLyBanVeMayBay.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _75323963_p0_master1200 {
+            get {
+                object obj = ResourceManager.GetObject("75323963_p0_master1200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 123456.
         /// </summary>
         public static string Password {

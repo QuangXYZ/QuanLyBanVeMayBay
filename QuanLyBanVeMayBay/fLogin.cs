@@ -26,10 +26,10 @@ namespace QuanLyBanVeMayBay
                     int i = (int)command.ExecuteScalar();
                     if (i!=0)
                     {
-                        fHome f = new fHome();
+                        fHome f = new fHome(textBox2.Text);
                         this.Hide();
                         f.ShowDialog();
-                        this.Show();
+                
                         if (checkBox1.Checked)
                         {
                             string[] str = { "true", textBox1.Text, textBox2.Text };

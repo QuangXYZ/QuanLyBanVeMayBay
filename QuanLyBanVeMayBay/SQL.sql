@@ -1,6 +1,15 @@
 create database QuanLyBanVeMayBay
 use QuanLyBanVeMayBay
 
+
+create table USERS (
+	TENUSER char(10) not null primary key,
+	MATKHAU char(10),
+	ISADMIN int
+)
+insert into USERS(TENUSER,MATKHAU,ISADMIN) values 
+('Admin','123456',1)
+
 create table SANBAY
 (
 	MASANBAY char(5) not null primary key,
@@ -52,10 +61,7 @@ create table NHANVIEN
 	
 )
 
-alter table CHUYENBAY add constraint FK_MAMAYBAY foreign key (MAMAYBAY) references MAYBAY(MAMAYBAY)
-alter table CHUYENBAY add constraint FK_SANBAYDI foreign key (SANBAYDI) references SANBAY(MASANBAY)
-alter table CHUYENBAY add constraint FK_SANBAYDEN foreign key (SANBAYDEN) references SANBAY(MASANBAY)
-alter table CHUYENBAY add constraint FK_MACHUYENBAY foreign key (MACHUYENBAY) references CHUYENBAY(MACHUYENBAY)
+
 
 
 
@@ -69,12 +75,7 @@ insert into SANBAY(MASANBAY,TENSANBAY,QUOCGIA) values
 ('SB003','SAN BAY DN','VIETNAM')
 
 
-MANHANVIEN char(5) not null primary key,
-	TENNHANVIEN varchar(40),
-	MAMAYBAY char(5),
-	CMND varchar(20),
-	SDT char(15),
-	DIACHI char(40)
+
 insert into NHANVIEN(MANHANVIEN,TENNHANVIEN,MAMAYBAY,CMND,SDT,DIACHI) values 
 ('NV001','Nguyen Thanh Quang','MB001','123456789','0987654321','273 An Duong Vuong')
 

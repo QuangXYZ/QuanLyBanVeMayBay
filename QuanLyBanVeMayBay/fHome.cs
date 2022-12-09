@@ -19,75 +19,13 @@ namespace QuanLyBanVeMayBay
        
         public fHome()
         {
-            InitializeComponent();
-            dataGridView3.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView3.AllowUserToAddRows = false;
-            dataGridView3.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView3.MultiSelect = false;
-
-            dataGridView9.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView9.AllowUserToAddRows = false;
-            dataGridView9.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView9.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView9.MultiSelect = false;
-
-
-
-            dataGridView4.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView4.DataSource = GetAllVe().Tables[0];
-            dataGridView4.AllowUserToAddRows = false;
-            dataGridView4.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView4.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView4.MultiSelect = false;
-
-            dataGridView1.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.DataSource = GetAllChuyenBay().Tables[0];
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.MultiSelect = false;
-
-            dataGridView7.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView7.DataSource = GetAllChuyenBayVe().Tables[0];
-            dataGridView7.AllowUserToAddRows = false;
-            dataGridView7.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView7.MultiSelect = false;
-
-            dataGridView8.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView8.DataSource = GetAllSanBay().Tables[0];
-            dataGridView8.AllowUserToAddRows = false;
-            dataGridView8.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView8.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView8.MultiSelect = false;
-
-
-
-            dataGridView6.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView6.DataSource = GetAllMayBay().Tables[0];
-            dataGridView6.AllowUserToAddRows = false;
-            dataGridView6.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView6.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView6.MultiSelect = false;
-
-            dataGridView10.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView10.DataSource = GetAllMayBayNv().Tables[0];
-            dataGridView10.AllowUserToAddRows = false;
-            dataGridView10.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView10.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView10.MultiSelect = false;
-
-            dataGridView5.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView5.DataSource = GetAllNhanVien().Tables[0];
-            dataGridView5.AllowUserToAddRows = false;
-            dataGridView5.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView5.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView5.MultiSelect = false;
-
-
-            initAll();
+            InitializeComponent();      
             
+        }
+        public fHome(string Username):this()
+        {
+            label3.Text = Username;
+
         }
 
         void initAll()
@@ -274,7 +212,73 @@ namespace QuanLyBanVeMayBay
 
         private void fHome_Load(object sender, EventArgs e)
         {
+            dataGridView3.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView3.MultiSelect = false;
 
+            dataGridView9.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView9.AllowUserToAddRows = false;
+            dataGridView9.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView9.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView9.MultiSelect = false;
+
+
+
+            dataGridView4.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView4.DataSource = GetAllVe().Tables[0];
+            dataGridView4.AllowUserToAddRows = false;
+            dataGridView4.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView4.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView4.MultiSelect = false;
+
+            dataGridView1.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.DataSource = GetAllChuyenBay().Tables[0];
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false;
+
+            dataGridView7.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView7.DataSource = GetAllChuyenBayVe().Tables[0];
+            dataGridView7.AllowUserToAddRows = false;
+            dataGridView7.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView7.MultiSelect = false;
+
+            dataGridView8.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView8.DataSource = GetAllSanBay().Tables[0];
+            dataGridView8.AllowUserToAddRows = false;
+            dataGridView8.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView8.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView8.MultiSelect = false;
+
+
+
+            dataGridView6.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView6.DataSource = GetAllMayBay().Tables[0];
+            dataGridView6.AllowUserToAddRows = false;
+            dataGridView6.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView6.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView6.MultiSelect = false;
+
+            dataGridView10.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView10.DataSource = GetAllMayBayNv().Tables[0];
+            dataGridView10.AllowUserToAddRows = false;
+            dataGridView10.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView10.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView10.MultiSelect = false;
+
+            dataGridView5.AutoSizeColumnsMode = (DataGridViewAutoSizeColumnsMode)DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView5.DataSource = GetAllNhanVien().Tables[0];
+            dataGridView5.AllowUserToAddRows = false;
+            dataGridView5.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView5.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView5.MultiSelect = false;
+
+
+            initAll();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -300,7 +304,10 @@ namespace QuanLyBanVeMayBay
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(0);
+            fUser f = new fUser();
+            this.Hide();
+            f.ShowDialog();
+          
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -1054,7 +1061,7 @@ namespace QuanLyBanVeMayBay
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
                 cmd.Parameters.AddWithValue("@MAMAYBAY", textBox16.Text);
                 cmd.Parameters.AddWithValue("@TENMAYBAY", textBox31.Text);
-                cmd.Parameters.AddWithValue("@SOGHE", textBox27.Text);
+                cmd.Parameters.AddWithValue("@SOGHE", int.Parse(textBox20.Text) + int.Parse(textBox24.Text));
                 cmd.Parameters.AddWithValue("@LOAI", textBox19.Text);
                 cmd.Parameters.AddWithValue("@THUONGGIA", textBox20.Text);
                 cmd.Parameters.AddWithValue("@PHOTHONG", textBox24.Text);
@@ -1336,6 +1343,16 @@ namespace QuanLyBanVeMayBay
             textBox11.Text = "";
             textBox12.Text = "";
             textBox14.Text = "";
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox33.Text = "";
+            comboBox10.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;
         }
     }
 }
