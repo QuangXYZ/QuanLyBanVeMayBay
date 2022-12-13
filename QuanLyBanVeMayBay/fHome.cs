@@ -22,9 +22,31 @@ namespace QuanLyBanVeMayBay
             InitializeComponent();      
             
         }
+        private int isAdmin;
         public fHome(string Username):this()
         {
             label3.Text = Username;
+            SqlConnection sqlConn;
+            sqlConn = new SqlConnection(ConnectionString.connectionString); 
+            sqlConn.Open();
+            string sql = "select * from USERS a where a.TENUSER='" + Username + "'";
+            SqlCommand command = new SqlCommand(sql, sqlConn);
+            SqlDataReader dr = command.ExecuteReader();
+            while (dr.Read())
+            {
+                if (dr["ISADMIN"].ToString().Equals("1"))
+                {
+                    isAdmin = 1;
+                    label59.Text = "Quản lý";
+                }
+                else
+                {
+                    isAdmin = 0;
+                    label59.Text = "Nhân viên";
+                }
+            }
+            sqlConn.Close();
+
 
         }
 
@@ -167,6 +189,10 @@ namespace QuanLyBanVeMayBay
 
         private void button3_Click(object sender, EventArgs e)
         {
+            resetColor();
+            b3 = true;   
+            button3.BackColor = Color.Blue;
+            button3.ForeColor = Color.White;
             tabControl1.SelectTab(1);
         }
 
@@ -277,8 +303,9 @@ namespace QuanLyBanVeMayBay
             dataGridView5.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView5.MultiSelect = false;
 
-
+            
             initAll();
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -304,30 +331,57 @@ namespace QuanLyBanVeMayBay
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fUser f = new fUser();
-          
-            f.ShowDialog();
-            this.Show();
+            if (isAdmin == 1) { 
+                fUser f = new fUser();
+
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                Staff f = new Staff(label3.Text);
+
+                f.ShowDialog();
+                this.Show();
+            }
+
           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            resetColor();
+            b2 = true;
+            button2.BackColor = Color.Blue;
+            button2.ForeColor = Color.White;
+            
             tabControl1.SelectTab(0);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            resetColor();
+            b7 = true;
+            button7.BackColor = Color.Blue;
+            button7.ForeColor = Color.White;
             tabControl1.SelectTab(4);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(2);
+            resetColor();
+            b4 = true;
+            button4.BackColor = Color.Blue;
+            button4.ForeColor = Color.White;
+            tabControl1.SelectTab(3);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            resetColor();
+            b5 = true;
+            button5.BackColor = Color.Blue;
+            button5.ForeColor = Color.White;
             tabControl1.SelectTab(2);
         }
 
@@ -442,12 +496,14 @@ namespace QuanLyBanVeMayBay
 
         private void button1_MouseHover(object sender, EventArgs e)
         {
-            button1.BackColor=Color.Orange;
+            button1.BackColor=Color.Blue;
+            button1.ForeColor = Color.White;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            button1.BackColor = Color.MediumSeaGreen;
+            button1.BackColor = Color.Gold;
+            button1.ForeColor = Color.MidnightBlue;
         }
         
 
@@ -870,11 +926,6 @@ namespace QuanLyBanVeMayBay
             da.Fill(ds1);
             sqlConn.Close();
             dataGridView9.DataSource = ds1.Tables[0];
-
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -1345,6 +1396,131 @@ namespace QuanLyBanVeMayBay
 
         private void thongKeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongKe f = new ThongKe();
+            f.ShowDialog();
+            this.Show();
+        }
+        private bool  b2 = true, b3 = false, b4 = false, b5 = false, b6 = false, b7 = false;
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Blue;
+            button2.ForeColor = Color.White;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            if (b2) return;
+            button2.BackColor = Color.Gold;
+            button2.ForeColor = Color.MidnightBlue;
+        }
+
+        private void button3_MouseHover(object sender, EventArgs e)
+        {
+            
+            button3.BackColor = Color.Blue;
+            button3.ForeColor = Color.White;
+            
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            if (b3) return;
+            button3.BackColor = Color.Gold;
+            button3.ForeColor = Color.MidnightBlue;
+        }
+
+        private void button4_MouseHover(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.Blue;
+            button4.ForeColor = Color.White;
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            if (b4) return;
+            button4.BackColor = Color.Gold;
+            button4.ForeColor = Color.MidnightBlue;
+        }
+
+        private void button5_MouseHover(object sender, EventArgs e)
+        {
+            button5.BackColor = Color.Blue;
+            button5.ForeColor = Color.White;
+        }
+
+        private void button5_MouseLeave(object sender, EventArgs e)
+        {
+            if (b5) return;
+            button5.BackColor = Color.Gold;
+            button5.ForeColor = Color.MidnightBlue;
+        }
+
+        private void button7_MouseHover(object sender, EventArgs e)
+        {
+            button7.BackColor = Color.Blue;
+            button7.ForeColor = Color.White;
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            resetColor();
+            b4 = true;
+            button4.BackColor = Color.Blue;
+            button4.ForeColor = Color.White;
+        }
+
+        private void button7_MouseLeave(object sender, EventArgs e)
+        {
+            if (b7) return;
+            button7.BackColor = Color.Gold;
+            button7.ForeColor = Color.MidnightBlue;
+        }
+
+        private void button6_MouseHover(object sender, EventArgs e)
+        {
+            button6.BackColor = Color.Red;
+            button6.ForeColor = Color.White;
+        }
+
+        private void button6_MouseLeave(object sender, EventArgs e)
+        {
+            button6.BackColor = Color.Gold;
+            button6.ForeColor = Color.MidnightBlue;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void resetColor() {
+            button1.BackColor = Color.Gold;
+            button1.ForeColor = Color.MidnightBlue;
+            button2.BackColor = Color.Gold;
+            button2.ForeColor = Color.MidnightBlue;
+            button3.BackColor = Color.Gold;
+            button3.ForeColor = Color.MidnightBlue;
+            button4.BackColor = Color.Gold;
+            button4.ForeColor = Color.MidnightBlue;
+            button5.BackColor = Color.Gold;
+            button5.ForeColor = Color.MidnightBlue;
+            button6.BackColor = Color.Gold;
+            button6.ForeColor = Color.MidnightBlue;
+            button7.BackColor = Color.Gold;
+            button7.ForeColor = Color.MidnightBlue;
+
+           
+            b2 = false;
+            b3 = false;
+            b4 = false;
+            b5 = false;
+            b6 = false;
+            b7 = false;
+
 
         }
     }

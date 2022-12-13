@@ -63,9 +63,162 @@ namespace QuanLyBanVeMayBay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap _360_F_353464184_V1dN7KDYJly9862tICkkTH0f01OzlBk6 {
+            get {
+                object obj = ResourceManager.GetObject("360_F_353464184_V1dN7KDYJly9862tICkkTH0f01OzlBk6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _360_F_353464184_V1dN7KDYJly9862tICkkTH0f01OzlBk61 {
+            get {
+                object obj = ResourceManager.GetObject("360_F_353464184_V1dN7KDYJly9862tICkkTH0f01OzlBk61", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap _360_F_360659707_iAtxYNBFc0lJqqDWXgdDANTYGi1XRdxz {
+            get {
+                object obj = ResourceManager.GetObject("360_F_360659707_iAtxYNBFc0lJqqDWXgdDANTYGi1XRdxz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap _75323963_p0_master1200 {
             get {
                 object obj = ResourceManager.GetObject("75323963_p0_master1200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap abstract_paper_clouds_airplane_flying_blue_background_with_mock_up_place_your_advertisement_travel_transport_aircraft_concept_3d_rendering_670147_8133 {
+            get {
+                object obj = ResourceManager.GetObject("abstract-paper-clouds-airplane-flying-blue-background-with-mock-up-place-your-adv" +
+                        "ertisement-travel-transport-aircraft-concept-3d-rendering_670147-8133", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap abstract_paper_clouds_airplane_flying_blue_background_with_mock_up_place_your_advertisement_travel_transport_aircraft_concept_3d_rendering_670147_81331 {
+            get {
+                object obj = ResourceManager.GetObject("abstract-paper-clouds-airplane-flying-blue-background-with-mock-up-place-your-adv" +
+                        "ertisement-travel-transport-aircraft-concept-3d-rendering_670147-81331", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap account {
+            get {
+                object obj = ResourceManager.GetObject("account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap airplane {
+            get {
+                object obj = ResourceManager.GetObject("airplane", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap airplane__1_ {
+            get {
+                object obj = ResourceManager.GetObject("airplane (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap airplane_coming_in_to_airport {
+            get {
+                object obj = ResourceManager.GetObject("airplane-coming-in-to-airport", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap airplane_icon_blue_background_flat_style_vector_illustration_184975907 {
+            get {
+                object obj = ResourceManager.GetObject("airplane-icon-blue-background-flat-style-vector-illustration-184975907", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap airplane_ticket {
+            get {
+                object obj = ResourceManager.GetObject("airplane-ticket", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap airport {
+            get {
+                object obj = ResourceManager.GetObject("airport", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap flat_airplane_icon_on_blue_background_free_vector {
+            get {
+                object obj = ResourceManager.GetObject("flat-airplane-icon-on-blue-background-free-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap istockphoto_1168241227_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1168241227-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap miniature_toy_airplane_colorful_paper_background_flat_lay_design_travel_concept_plane_clouds_blue_sky_copy_space_171180018 {
+            get {
+                object obj = ResourceManager.GetObject("miniature-toy-airplane-colorful-paper-background-flat-lay-design-travel-concept-p" +
+                        "lane-clouds-blue-sky-copy-space-171180018", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -80,11 +233,71 @@ namespace QuanLyBanVeMayBay.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap plane {
+            get {
+                object obj = ResourceManager.GetObject("plane", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap plus {
+            get {
+                object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap plus__2_ {
+            get {
+                object obj = ResourceManager.GetObject("plus (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap plus__3_ {
+            get {
+                object obj = ResourceManager.GetObject("plus (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to true.
         /// </summary>
         public static string RememberMe {
             get {
                 return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap staff {
+            get {
+                object obj = ResourceManager.GetObject("staff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap travel_background_with_airplane_and_sky_with_cloud_illustration_free_vector {
+            get {
+                object obj = ResourceManager.GetObject("travel-background-with-airplane-and-sky-with-cloud-illustration-free-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

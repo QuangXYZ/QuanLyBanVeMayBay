@@ -117,17 +117,80 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="abstract-paper-clouds-airplane-flying-blue-background-with-mock-up-place-your-advertisement-travel-transport-aircraft-concept-3d-rendering_670147-8133" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\abstract-paper-clouds-airplane-flying-blue-background-with-mock-up-place-your-advertisement-travel-transport-aircraft-concept-3d-rendering_670147-8133.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="360_F_360659707_iAtxYNBFc0lJqqDWXgdDANTYGi1XRdxz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\360_F_360659707_iAtxYNBFc0lJqqDWXgdDANTYGi1XRdxz.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Username" xml:space="preserve">
     <value>Admin</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>123456</value>
   </data>
+  <data name="istockphoto-1168241227-612x612" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\istockphoto-1168241227-612x612.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="travel-background-with-airplane-and-sky-with-cloud-illustration-free-vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\travel-background-with-airplane-and-sky-with-cloud-illustration-free-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="abstract-paper-clouds-airplane-flying-blue-background-with-mock-up-place-your-advertisement-travel-transport-aircraft-concept-3d-rendering_670147-81331" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\abstract-paper-clouds-airplane-flying-blue-background-with-mock-up-place-your-advertisement-travel-transport-aircraft-concept-3d-rendering_670147-81331.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="airplane-coming-in-to-airport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\airplane-coming-in-to-airport.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="360_F_353464184_V1dN7KDYJly9862tICkkTH0f01OzlBk61" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\360_F_353464184_V1dN7KDYJly9862tICkkTH0f01OzlBk61.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RememberMe" xml:space="preserve">
     <value>true</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="airplane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\airplane.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="airport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\airport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="360_F_353464184_V1dN7KDYJly9862tICkkTH0f01OzlBk6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\360_F_353464184_V1dN7KDYJly9862tICkkTH0f01OzlBk6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plane.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="flat-airplane-icon-on-blue-background-free-vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flat-airplane-icon-on-blue-background-free-vector.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="75323963_p0_master1200" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\75323963_p0_master1200.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="airplane-ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\airplane-ticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="airplane-icon-blue-background-flat-style-vector-illustration-184975907" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\airplane-icon-blue-background-flat-style-vector-illustration-184975907.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="miniature-toy-airplane-colorful-paper-background-flat-lay-design-travel-concept-plane-clouds-blue-sky-copy-space-171180018" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\miniature-toy-airplane-colorful-paper-background-flat-lay-design-travel-concept-plane-clouds-blue-sky-copy-space-171180018.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="airplane (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\airplane (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
