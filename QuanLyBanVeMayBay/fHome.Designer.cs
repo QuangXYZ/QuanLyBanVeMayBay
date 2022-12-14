@@ -1752,7 +1752,6 @@
             this.textBox28.Location = new System.Drawing.Point(160, 259);
             this.textBox28.Name = "textBox28";
             this.textBox28.PlaceholderText = "Search";
-            this.textBox28.ReadOnly = true;
             this.textBox28.Size = new System.Drawing.Size(225, 29);
             this.textBox28.TabIndex = 10;
             // 
@@ -1804,6 +1803,7 @@
             this.button31.TabIndex = 8;
             this.button31.Text = "Tìm";
             this.button31.UseVisualStyleBackColor = false;
+            this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
             // button23
             // 
@@ -1816,6 +1816,7 @@
             this.button23.TabIndex = 8;
             this.button23.Text = "Reset";
             this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click_2);
             // 
             // button24
             // 
@@ -2302,7 +2303,6 @@
             this.label59.Size = new System.Drawing.Size(83, 25);
             this.label59.TabIndex = 0;
             this.label59.Text = "Quản lý ";
-            this.label59.Click += new System.EventHandler(this.label3_Click);
             // 
             // label3
             // 
@@ -2315,7 +2315,6 @@
             this.label3.Size = new System.Drawing.Size(110, 28);
             this.label3.TabIndex = 0;
             this.label3.Text = "User name";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // fHome
             // 

@@ -1474,6 +1474,31 @@ namespace QuanLyBanVeMayBay
             button4.ForeColor = Color.White;
         }
 
+        private void button23_Click_2(object sender, EventArgs e)
+        {
+            textBox16.Text = "";
+            textBox31.Text ="";
+            textBox27.Text = "";
+            textBox19.Text = "";
+            textBox20.Text = "";
+            textBox24.Text = "";
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            if (textBox28.Text == null || comboBox7.SelectedItem.ToString() == null) return;
+            SqlConnection sqlConn;
+            SqlDataAdapter da;
+            DataSet ds = new DataSet();
+            sqlConn = new SqlConnection(ConnectionString.connectionString);
+            sqlConn.Open();
+            string sql = "Select * from MAYBAY where " + comboBox7.SelectedItem.ToString() + " ='" + textBox28.Text + "'";
+            da = new SqlDataAdapter(sql, sqlConn);
+            da.Fill(ds);
+            sqlConn.Close();
+            dataGridView6.DataSource = ds.Tables[0];
+        }
+
         private void button7_MouseLeave(object sender, EventArgs e)
         {
             if (b7) return;

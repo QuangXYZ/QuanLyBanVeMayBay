@@ -129,7 +129,16 @@ namespace QuanLyBanVeMayBay
 
         private void button3_Click(object sender, EventArgs e)
         {
-            try
+             if (dataGridView1.SelectedRows.Count == 0) return;
+            int i = dataGridView1.SelectedRows[0].Index;
+            if (Convert.ToString(dataGridView1[0, i].Value).Equals(textBox1.Text)&& Convert.ToString(dataGridView1[1, i].Value).Equals(textBox2.Text)&& int.Parse(Convert.ToString(dataGridView1[2, i].Value)) == (checkBox1.Checked ? 1 : 0))
+            {
+                MessageBox.Show("Không có thay đổi", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+           
+            
+                try
             {
                 SqlConnection sqlConn;
                 sqlConn = new SqlConnection(ConnectionString.connectionString);
